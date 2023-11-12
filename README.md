@@ -6,7 +6,7 @@ This is for scraping titles from a list of IPs or domains.
 * You could use this to grab titles of all your websites in your environment via their IP addresses or domain names.  
 * If you run a lot of websites and can't remember what everything is, this could be an easy way to check.  
 * It could be useful on a pentest to see what web services are running in an unfamiliar environment.  
-* To make a point about how websites that use Clouflare can have their host IP addresses discovered, thereby rendering their protection pointless.  
+* To make a point about how websites that use Cloudflare can have their host IP addresses discovered, thereby rendering their protection pointless.  
 
 # How to use:
 0) `pip install -r requirements.txt`
