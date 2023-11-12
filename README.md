@@ -9,7 +9,7 @@ This is for scraping titles from a list of IPs or domains.
 * To make a point about how websites that use Clouflare can have their host IP addresses discovered, thereby rendering their protection pointless.  
 
 # How to use:
-0) `pip install requirements.txt`
+0) `pip install -r requirements.txt`
 1) `python3 main.py -c <list.txt> -o <output.txt> -t <threads>`
 
 # Okay, but why?
