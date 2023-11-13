@@ -51,6 +51,7 @@ ufw reject 443
 ufw reload
 ufw status numbered
 ```
+You should also see Cloudflare's [Allow Cloudflare IP addresses](https://developers.cloudflare.com/fundamentals/setup/allow-cloudflare-ip-addresses/) document.  
 Congrats, with that, you're now configured more properly and have to worry less about DDoS attacks, but should probably do some more work now making sure it's as secure as you can from other attacks.  
 
 # Contributors
