@@ -54,6 +54,24 @@ ufw status numbered
 You should also see Cloudflare's [Allow Cloudflare IP addresses](https://developers.cloudflare.com/fundamentals/setup/allow-cloudflare-ip-addresses/) document.  
 Congrats, with that, you're now configured more properly and have to worry less about DDoS attacks, but should probably do some more work now making sure it's as secure as you can from other attacks.  
 
+Here's how to do the same with BunnyCDN as it has the same inherent issue, however I didn't find docs as nice as CF's on it:
+```
+curl -s https://api.bunny.net/system/edgeserverlist/plain -o /tmp/bunnycdnips.txt
+echo "" >> /tmp/bunnycdnips.txt
+ufw --force reset
+ufw enable
+ufw allow from 1.2.3.4 #Replace with any IP that NEEDS direct IP access, probably your's that is currently logged in
+ufw allow ssh #I assume you'd still like to manage via ssh and not get kicked out when you reload
+for ip in $(cat /tmp/bunnycdnips.txt)
+do
+  ufw allow proto tcp from $ip comment 'BunnyCDN'
+done
+ufw reject 80 
+ufw reject 443
+ufw reload
+ufw status numbered
+```
+
 # Contributors
 * [Lord SkeletonMan](https://github.com/SkeletonMan03)
 * [CRAWNiiK](https://github.com/CRAWNiiK)
